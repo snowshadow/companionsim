@@ -1,0 +1,13 @@
+{
+  "dailyTokensPerUser": 3000000,
+  "dayTimezone": "Asia/Shanghai",
+  "overrides": {},
+  "estimate": {
+    "simAgentFixed": 600,
+    "simAgentPerHistoricalTurn": 35,
+    "simAgentPerBeat": 20,
+    "judgeFixed": 3500,
+    "judgePerTurn": 200,
+    "safetyFactor": 1.3
+  }
+}

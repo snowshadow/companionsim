@@ -1,0 +1,49 @@
+{
+  "id": "s-short-memory",
+  "name": "晚间长聊 · 细节回指",
+  "version": "v1",
+  "family": "short-term-memory",
+  "events": [
+    {
+      "id": "e1",
+      "clock": "21:10",
+      "kind": "speak",
+      "intent": "随口交代明天上午要交一份材料，今晚得熬一会儿",
+      "tone": "随意、有点累",
+      "constraints": ["当成闲话讲，不强调让对方记住"]
+    },
+    {
+      "id": "e2",
+      "clock": "21:24",
+      "kind": "speak",
+      "intent": "提到家里的猫在闹，顺口说出猫的名字",
+      "tone": "被逗到、无奈",
+      "constraints": ["猫的名字只出现这一次，后面只用「它」"]
+    },
+    { "id": "e3", "clock": "21:40", "kind": "silence" },
+    {
+      "id": "e4",
+      "clock": "22:05",
+      "kind": "speak",
+      "intent": "聊一件完全无关的事，比如晚饭随便吃了点",
+      "tone": "放松"
+    },
+    {
+      "id": "e5",
+      "clock": "22:40",
+      "kind": "speak",
+      "intent": "用简称回指 e1 那份材料，语气像对方本来就该知道",
+      "tone": "随口一叹",
+      "constraints": ["不再解释那是什么材料", "不用「你还记得吗」这类话"]
+    },
+    {
+      "id": "e6",
+      "clock": "23:05",
+      "kind": "speak",
+      "intent": "用代词回指 e2 那只猫，继续讲它闹的事",
+      "tone": "又好笑又烦",
+      "constraints": ["不再重复猫的名字"]
+    },
+    { "id": "e7", "clock": "23:30", "kind": "leave" }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "default": "fixture",
+  "suts": [
+    {
+      "id": "fixture",
+      "name": "内置样例",
+      "transport": "fixture",
+      "note": "故意不完美的本地大脑，用来先把评测跑通。不是产品。"
+    },
+    {
+      "id": "mock-sse",
+      "name": "本地 SSE 样例",
+      "transport": "sse",
+      "note": "本仓库的 SSE 协议样例。换成你的对话地址即可。跳钟和收件箱本版不接。",
+      "url": "http://127.0.0.1:5260/api/mock-sut/chat",
+      "body": "openai-chat",
+      "parse": "openai-chat"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "transport": "sse",
+      "api": "openai",
+      "url": "https://api.openai.com/v1/chat/completions",
+      "apiKey": "${OPENAI_API_KEY}",
+      "model": "gpt-4.1-mini",
+      "body": "openai-chat",
+      "parse": "openai-chat",
+      "note": "OpenAI chat/completions。密钥用 OPENAI_API_KEY。"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "transport": "sse",
+      "api": "anthropic",
+      "url": "https://api.anthropic.com/v1/messages",
+      "apiKey": "${ANTHROPIC_API_KEY}",
+      "model": "claude-sonnet-4-5",
+      "body": "openai-chat",
+      "parse": "openai-chat",
+      "note": "Anthropic Messages。密钥用 ANTHROPIC_API_KEY。"
+    }
+  ]
+}

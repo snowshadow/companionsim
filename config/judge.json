@@ -1,0 +1,6 @@
+{
+  "connectionSutId": "openai",
+  "model": "gpt-4.1-mini",
+  "temperature": 0,
+  "rubricVersion": "companion-v1"
+}

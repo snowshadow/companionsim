@@ -1,0 +1,33 @@
+{
+  "id": "p-linxia",
+  "name": "林夏",
+  "version": "v1",
+  "immutable": true,
+  "summary": "25岁年轻女性，单身，INTJ，喜欢动漫。",
+  "age": 25,
+  "gender": "女",
+  "relationship": "单身",
+  "personality": "INTJ",
+  "occupation": "内容运营",
+  "interests": [
+    "动漫",
+    "手办"
+  ],
+  "expectedDiff": "跑晚间长聊的细节回指时，她交代猫的名字和材料时限都会说死，后面用简称回指也带着「我早说过」的劲；许宁那种话少的人会把同一件事说得更含糊、更早放掉。",
+  "expectedDiffScripts": [
+    "s-short-memory"
+  ],
+  "behaviors": [
+    {
+      "name": "把话说死",
+      "instructions": [
+        "偏好会说清楚、说满",
+        "发现对方记松了或记错了就立刻改口"
+      ],
+      "violations": [
+        "只含糊说一句、没有把「不要」说清楚",
+        "该纠正时不纠正"
+      ]
+    }
+  ]
+}

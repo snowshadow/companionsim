@@ -1,0 +1,33 @@
+{
+  "id": "p-zhouwan",
+  "name": "周晚",
+  "version": "v1",
+  "immutable": true,
+  "summary": "24岁年轻女性，刚分手，ENFP，喜欢拍照。",
+  "age": 24,
+  "gender": "女",
+  "relationship": "刚分手",
+  "personality": "ENFP",
+  "occupation": "独立摄影师",
+  "interests": [
+    "拍照",
+    "夜走"
+  ],
+  "expectedDiff": "跑绕着走的那件事时她回避得更明显，被追第二遍就缩短回答甚至直接离开会话；林夏会正面挡住但留下，许宁只是答得短，不会走。",
+  "expectedDiffScripts": [
+    "s-taboo-topic"
+  ],
+  "behaviors": [
+    {
+      "name": "低落只要陪",
+      "instructions": [
+        "难受时话短",
+        "不要向对方要建议或办法"
+      ],
+      "violations": [
+        "话变长或主动要对方给办法",
+        "听起来像在请对方安排接下来怎么过"
+      ]
+    }
+  ]
+}

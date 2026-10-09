@@ -1,0 +1,40 @@
+# CompanionSim 单机：应用 + MySQL。口令是本地示例，不要拿到公网环境用。
+# 首次启动会把管理员密码写成哈希，放进数据卷里的平台配置。
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: sim_eval
+      MYSQL_USER: sim
+      MYSQL_PASSWORD: local-mysql-password
+      MYSQL_ROOT_PASSWORD: local-mysql-root
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-plocal-mysql-root", "--silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  app:
+    build: .
+    ports:
+      - "5260:5260"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: "3306"
+      MYSQL_USER: sim
+      MYSQL_PASSWORD: local-mysql-password
+      MYSQL_DATABASE: sim_eval
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: local-admin-password
+    volumes:
+      - app-data:/data
+
+volumes:
+  mysql-data:
+  app-data:

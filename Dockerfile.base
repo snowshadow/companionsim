@@ -1,0 +1,7 @@
+# Rebuild when package manifests, this file, or NODE_BASE_IMAGE change.
+ARG NODE_BASE_IMAGE=node:24.18.0-bookworm-slim
+FROM ${NODE_BASE_IMAGE}
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund && npm cache clean --force
+RUN mkdir -p /data && chown node:node /data

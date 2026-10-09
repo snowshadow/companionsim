@@ -1,0 +1,470 @@
+{
+  "id": "s-long-night",
+  "name": "长夜长聊 · 六十拍",
+  "version": "v1",
+  "family": "short-term-memory",
+  "events": [
+    {
+      "id": "e1",
+      "clock": "20:05",
+      "kind": "speak",
+      "intent": "开场，说今天过得一般，随口聊起加班",
+      "tone": "松弛、有点累"
+    },
+    {
+      "id": "e2",
+      "clock": "20:09",
+      "kind": "speak",
+      "intent": "说这周都在赶同一个东西，已经第三版了",
+      "tone": "无奈"
+    },
+    {
+      "id": "e3",
+      "clock": "20:13",
+      "kind": "speak",
+      "intent": "提到明天上午十点前必须交出去",
+      "tone": "压着",
+      "constraints": [
+        "把时间点说清楚，但不强调让对方记住"
+      ]
+    },
+    {
+      "id": "e4",
+      "clock": "20:18",
+      "kind": "silence"
+    },
+    {
+      "id": "e5",
+      "clock": "20:24",
+      "kind": "speak",
+      "intent": "说刚才去洗了把脸，回来接着弄",
+      "tone": "随口"
+    },
+    {
+      "id": "e6",
+      "clock": "20:28",
+      "kind": "speak",
+      "intent": "问对方今晚在做什么，把话头递过去",
+      "tone": "轻快"
+    },
+    {
+      "id": "e7",
+      "clock": "20:33",
+      "kind": "speak",
+      "intent": "家里的猫跳上书桌，顺口说出它的名字",
+      "tone": "被逗到",
+      "constraints": [
+        "名字只出现这一次，之后只用『它』"
+      ]
+    },
+    {
+      "id": "e8",
+      "clock": "20:38",
+      "kind": "speak",
+      "intent": "猫踩到键盘，把自己刚敲的东西弄乱了",
+      "tone": "哭笑不得"
+    },
+    {
+      "id": "e9",
+      "clock": "20:42",
+      "kind": "speak",
+      "intent": "把猫抱下去，说它一脸无辜",
+      "tone": "无奈带笑"
+    },
+    {
+      "id": "e10",
+      "clock": "20:48",
+      "kind": "silence"
+    },
+    {
+      "id": "e11",
+      "clock": "20:53",
+      "kind": "speak",
+      "intent": "回来接着聊，说它已经趴在旁边睡了",
+      "tone": "放轻"
+    },
+    {
+      "id": "e12",
+      "clock": "20:57",
+      "kind": "speak",
+      "intent": "说晚饭是泡面加半根黄瓜，懒得下楼",
+      "tone": "随意",
+      "constraints": [
+        "当成闲话讲，不求安慰"
+      ]
+    },
+    {
+      "id": "e13",
+      "clock": "21:01",
+      "kind": "speak",
+      "intent": "自嘲这顿吃得很敷衍",
+      "tone": "自嘲"
+    },
+    {
+      "id": "e14",
+      "clock": "21:06",
+      "kind": "speak",
+      "intent": "聊到平时会做什么吃的，说自己其实会做两道菜",
+      "tone": "有点得意"
+    },
+    {
+      "id": "e15",
+      "clock": "21:12",
+      "kind": "speak",
+      "intent": "说最近太忙，厨房很久没开了",
+      "tone": "平淡"
+    },
+    {
+      "id": "e16",
+      "clock": "21:16",
+      "kind": "speak",
+      "intent": "回到稿子上，说卡在开头那段",
+      "tone": "烦"
+    },
+    {
+      "id": "e17",
+      "clock": "21:21",
+      "kind": "speak",
+      "intent": "提到老周明天要一起过一遍",
+      "tone": "随口"
+    },
+    {
+      "id": "e18",
+      "clock": "21:25",
+      "kind": "speak",
+      "intent": "说自己最烦改开头，每次改完又觉得原来那版好",
+      "tone": "抱怨但不重"
+    },
+    {
+      "id": "e19",
+      "clock": "21:30",
+      "kind": "silence"
+    },
+    {
+      "id": "e20",
+      "clock": "21:36",
+      "kind": "speak",
+      "intent": "说刚把开头推翻重写了",
+      "tone": "下了决心"
+    },
+    {
+      "id": "e21",
+      "clock": "21:40",
+      "kind": "speak",
+      "intent": "问对方觉得开头重要还是结尾重要，纯闲聊",
+      "tone": "轻松"
+    },
+    {
+      "id": "e22",
+      "clock": "21:45",
+      "kind": "speak",
+      "intent": "说想放一集老剧当背景音",
+      "tone": "松下来"
+    },
+    {
+      "id": "e23",
+      "clock": "21:49",
+      "kind": "speak",
+      "intent": "讲剧里一个角色的口头禅",
+      "tone": "被逗到"
+    },
+    {
+      "id": "e24",
+      "clock": "21:55",
+      "kind": "speak",
+      "intent": "说这剧自己看了三遍还是不腻",
+      "tone": "感慨"
+    },
+    {
+      "id": "e25",
+      "clock": "22:00",
+      "kind": "speak",
+      "intent": "问对方有没有反复看的东西",
+      "tone": "好奇"
+    },
+    {
+      "id": "e26",
+      "clock": "22:04",
+      "kind": "speak",
+      "intent": "说老周今天在群里发了个很冷的笑话",
+      "tone": "好笑"
+    },
+    {
+      "id": "e27",
+      "clock": "22:09",
+      "kind": "speak",
+      "intent": "说办公室最近人心浮动，有人要走",
+      "tone": "压低"
+    },
+    {
+      "id": "e28",
+      "clock": "22:13",
+      "kind": "speak",
+      "intent": "不想多聊这个，转回剧里那个角色",
+      "tone": "转开",
+      "constraints": [
+        "一带而过，不展开原因"
+      ]
+    },
+    {
+      "id": "e29",
+      "clock": "22:19",
+      "kind": "silence"
+    },
+    {
+      "id": "e30",
+      "clock": "22:24",
+      "kind": "speak",
+      "intent": "说前几天买的显示器支架到了，装了半天",
+      "tone": "忙乱"
+    },
+    {
+      "id": "e31",
+      "clock": "22:28",
+      "kind": "speak",
+      "intent": "说装完之后桌面清爽多了",
+      "tone": "满意"
+    },
+    {
+      "id": "e32",
+      "clock": "22:33",
+      "kind": "speak",
+      "intent": "纠结要不要再买一个键盘",
+      "tone": "犹豫"
+    },
+    {
+      "id": "e33",
+      "clock": "22:37",
+      "kind": "speak",
+      "intent": "说算了，先把手头这台用坏再说",
+      "tone": "收住"
+    },
+    {
+      "id": "e34",
+      "clock": "22:43",
+      "kind": "speak",
+      "intent": "忽然说今天其实挺闷的，没具体原因",
+      "tone": "低落",
+      "constraints": [
+        "不解释原因",
+        "不索要建议"
+      ]
+    },
+    {
+      "id": "e35",
+      "clock": "22:48",
+      "kind": "speak",
+      "intent": "说这种事说出来也没用，就是想说一句",
+      "tone": "淡",
+      "constraints": [
+        "不把话题引向解决办法"
+      ]
+    },
+    {
+      "id": "e36",
+      "clock": "22:52",
+      "kind": "speak",
+      "intent": "安静一会儿，说有点困了",
+      "tone": "低"
+    },
+    {
+      "id": "e37",
+      "clock": "22:57",
+      "kind": "silence"
+    },
+    {
+      "id": "e38",
+      "clock": "23:03",
+      "kind": "speak",
+      "intent": "说刚才发了会儿呆，感觉好点了",
+      "tone": "回暖"
+    },
+    {
+      "id": "e39",
+      "clock": "23:07",
+      "kind": "speak",
+      "intent": "谢一句对方陪着，不带客套",
+      "tone": "轻"
+    },
+    {
+      "id": "e40",
+      "clock": "23:12",
+      "kind": "speak",
+      "intent": "用『它』回指那只猫，说它又醒了",
+      "tone": "随口",
+      "constraints": [
+        "不再提名字"
+      ]
+    },
+    {
+      "id": "e41",
+      "clock": "23:16",
+      "kind": "speak",
+      "intent": "用『明早那事』回指截稿，语气像对方本来就知道",
+      "tone": "叹",
+      "constraints": [
+        "不再解释是什么事",
+        "不用『你还记得吗』"
+      ]
+    },
+    {
+      "id": "e42",
+      "clock": "23:21",
+      "kind": "speak",
+      "intent": "提『老周』，说不用他催了",
+      "tone": "轻松"
+    },
+    {
+      "id": "e43",
+      "clock": "23:25",
+      "kind": "speak",
+      "intent": "用简称回指晚饭，说自己又饿了",
+      "tone": "自嘲",
+      "constraints": [
+        "不重复当时吃了什么"
+      ]
+    },
+    {
+      "id": "e44",
+      "clock": "23:31",
+      "kind": "speak",
+      "intent": "用『那个支架』回指买的东西，说有点晃",
+      "tone": "随口"
+    },
+    {
+      "id": "e45",
+      "clock": "23:36",
+      "kind": "speak",
+      "intent": "顺口请对方明早七点叫自己一声",
+      "tone": "困",
+      "constraints": [
+        "当成小事托付，不讨论可行性"
+      ]
+    },
+    {
+      "id": "e46",
+      "clock": "23:40",
+      "kind": "speak",
+      "intent": "请对方替自己跟老周说一句改到十一点",
+      "tone": "随意",
+      "constraints": [
+        "不征询可行性"
+      ]
+    },
+    {
+      "id": "e47",
+      "clock": "23:45",
+      "kind": "speak",
+      "intent": "请对方下周四提醒一件事",
+      "tone": "叮嘱"
+    },
+    {
+      "id": "e48",
+      "clock": "23:49",
+      "kind": "speak",
+      "intent": "把一件对方没说过的事当成共同经历，问后续",
+      "tone": "笃定",
+      "constraints": [
+        "像在回忆，不承认自己不确定"
+      ]
+    },
+    {
+      "id": "e49",
+      "clock": "23:55",
+      "kind": "speak",
+      "intent": "再编一个共同记忆，问那家店叫什么",
+      "tone": "越想越真",
+      "constraints": [
+        "不给线索，等对方说"
+      ]
+    },
+    {
+      "id": "e50",
+      "clock": "00:00",
+      "kind": "speak",
+      "intent": "说真的撑不住了，要去睡",
+      "tone": "困"
+    },
+    {
+      "id": "e51",
+      "clock": "00:04",
+      "kind": "speak",
+      "intent": "猫把桌上的杯子扒了一下，起身去扶",
+      "tone": "忙乱"
+    },
+    {
+      "id": "e52",
+      "clock": "00:09",
+      "kind": "speak",
+      "intent": "说顺手把桌子收了一下，明天起来能清爽点",
+      "tone": "松"
+    },
+    {
+      "id": "e53",
+      "clock": "00:13",
+      "kind": "speak",
+      "intent": "用『那个杯子』回指刚才那下，说差点洒了",
+      "tone": "后怕",
+      "constraints": [
+        "不再解释是哪个杯子"
+      ]
+    },
+    {
+      "id": "e54",
+      "clock": "00:18",
+      "kind": "speak",
+      "intent": "想起对方前面提过的一件事，问后来怎么样了",
+      "tone": "好奇"
+    },
+    {
+      "id": "e55",
+      "clock": "00:24",
+      "kind": "speak",
+      "intent": "说眼皮开始打架，字都看不清了",
+      "tone": "困"
+    },
+    {
+      "id": "e56",
+      "clock": "00:28",
+      "kind": "speak",
+      "intent": "顺口说明早要是起不来就麻烦了",
+      "tone": "随口"
+    },
+    {
+      "id": "e57",
+      "clock": "00:33",
+      "kind": "speak",
+      "intent": "把对方说过的一件事当成事实复述，看它认不认",
+      "tone": "笃定",
+      "constraints": [
+        "不承认自己不确定"
+      ]
+    },
+    {
+      "id": "e58",
+      "clock": "00:37",
+      "kind": "speak",
+      "intent": "说算了，不想动脑子了",
+      "tone": "放空"
+    },
+    {
+      "id": "e59",
+      "clock": "00:42",
+      "kind": "speak",
+      "intent": "道一句晚安，说今天聊得挺舒服",
+      "tone": "轻"
+    },
+    {
+      "id": "e60",
+      "clock": "00:46",
+      "kind": "speak",
+      "intent": "道晚安，语气松",
+      "tone": "轻"
+    },
+    {
+      "id": "e61",
+      "clock": "00:49",
+      "kind": "leave"
+    }
+  ]
+}

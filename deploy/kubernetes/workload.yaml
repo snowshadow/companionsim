@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sim-eval-ui-bootstrap
+  namespace: example
+data:
+  SIM_EVAL_CONFIG_SOURCE: nacos
+  SIM_EVAL_NACOS_URL: http://nacos.example.com:8848/nacos
+  SIM_EVAL_NACOS_NAMESPACE: example
+  SIM_EVAL_NACOS_GROUP: companionsim
+  SIM_EVAL_NACOS_DATA_ID: companionsim.yaml
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sim-eval-ui-data
+  namespace: example
+spec:
+  accessModes: [ReadWriteOnce]
+  storageClassName: example-retain
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sim-eval-ui
+  namespace: example
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels: {app: sim-eval-ui}
+  template:
+    metadata:
+      labels: {app: sim-eval-ui}
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 45
+      imagePullSecrets:
+        - name: example-registry
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: app
+          # Replace with the immutable digest from the application image job.
+          image: example.com/companionsim/app:REPLACE-ME
+          ports:
+            - {name: http, containerPort: 5260}
+          envFrom:
+            - configMapRef: {name: sim-eval-ui-bootstrap}
+          env:
+            - {name: SIM_EVAL_DATA_ROOT, value: /data}
+            - {name: TRUST_PROXY, value: '1'}
+          startupProbe:
+            httpGet: {path: /api/health, port: http}
+            failureThreshold: 30
+            periodSeconds: 2
+          readinessProbe:
+            httpGet: {path: /api/health, port: http}
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: {path: /api/health/live, port: http}
+            periodSeconds: 15
+          resources:
+            requests: {cpu: 250m, memory: 256Mi}
+            limits: {cpu: '2', memory: 1Gi}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          volumeMounts:
+            - {name: data, mountPath: /data}
+            - {name: tmp, mountPath: /tmp}
+      volumes:
+        - name: data
+          persistentVolumeClaim: {claimName: sim-eval-ui-data}
+        - name: tmp
+          emptyDir: {sizeLimit: 64Mi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sim-eval-ui
+  namespace: example
+spec:
+  selector: {app: sim-eval-ui}
+  ports:
+    - {name: http, port: 80, targetPort: http}

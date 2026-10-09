@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "平台自身配置：MySQL 连接与账号密码登录。复制成 config/platform.json 后填写。",
+    "config/platform.json 已被 .gitignore 忽略——里面会有真实凭据，不要提交。",
+    "每个字符串都可以写死值，也可以写成 ${ENV} 引用（会从 process.env / .env.local 取），",
+    "以后要换成 Secret 或环境变量时，只改这里，代码不用动。"
+  ],
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "sim",
+    "password": "",
+    "database": "sim_eval",
+    "connectionLimit": 8,
+    "timezone": "Z"
+  },
+  "superadmin": {
+    "username": "admin",
+    "passwordHash": ""
+  },
+  "session": {
+    "cookieName": "sim_session",
+    "ttlHours": 168
+  },
+  "_mysql_comment": "建表：npm run db:migrate。库和账号由你建，平台只建表。",
+  "_superadmin_comment": "首个管理员种子。密码哈希：npm run admin-password -- <密码>。启动时按这个用户名写入 users，id 为 user-admin。"
+}

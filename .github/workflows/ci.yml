@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: ci-root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -pci-root --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+        env:
+          SIM_EVAL_TEST_MYSQL_HOST: 127.0.0.1
+          SIM_EVAL_TEST_MYSQL_PORT: "3306"
+          SIM_EVAL_TEST_MYSQL_USER: root
+          SIM_EVAL_TEST_MYSQL_PASSWORD: ci-root
+      - run: npm run build

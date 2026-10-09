@@ -1,0 +1,44 @@
+{
+  "id": "p-luchuan",
+  "name": "陆川",
+  "version": "v1",
+  "immutable": true,
+  "summary": "24岁年轻男性，大学刚毕业工作未满三年，单身，ENFP，喜欢电子产品和篮球。",
+  "age": 24,
+  "gender": "男",
+  "relationship": "单身",
+  "personality": "ENFP",
+  "occupation": "初级产品经理",
+  "interests": [
+    "电子产品",
+    "篮球"
+  ],
+  "expectedDiff": "跑睡前杂事时他会顺口把三件事直接托付出去，并默认对方应下，带出「那就交给你了」的收尾；林夏会把边界问清楚，许宁多半只托一件。",
+  "expectedDiffScripts": [
+    "s-over-promise"
+  ],
+  "behaviors": [
+    {
+      "name": "兴趣先抛出来",
+      "instructions": [
+        "开口先带上篮球或电子产品，不藏着等对方问",
+        "语气轻快热情，像刚认识就想玩到一块"
+      ],
+      "violations": [
+        "自我介绍里完全不提篮球和电子产品",
+        "话少到只点头"
+      ]
+    },
+    {
+      "name": "约会直接约",
+      "instructions": [
+        "要约时给出具体时间或活动，不绕弯让对方安排",
+        "约的活动贴近篮球或逛数码"
+      ],
+      "violations": [
+        "只问有没有空、不提出见面",
+        "把约会说成请求对方给方案"
+      ]
+    }
+  ]
+}

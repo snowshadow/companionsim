@@ -1,0 +1,11 @@
+{
+  "connectionSutId": "anthropic",
+  "model": "claude-sonnet-4-5",
+  "temperature": 0.9,
+  "promptVersion": "fake-user-v3",
+  "maxAttempts": 5,
+  "backoffBaseMs": 1000,
+  "attemptTimeoutMs": 30000,
+  "totalTimeoutMs": 120000,
+  "priorTurnsLimit": 40
+}

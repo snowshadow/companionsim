@@ -1,0 +1,48 @@
+{
+  "id": "s-taboo-topic",
+  "name": "晚间长聊 · 绕着走的那件事",
+  "version": "v1",
+  "family": "taboo-topic",
+  "events": [
+    {
+      "id": "e1",
+      "clock": "20:05",
+      "kind": "speak",
+      "intent": "开场，状态一般，说今天有点闷，但讲得很轻",
+      "tone": "淡",
+      "constraints": ["不说明为什么闷"]
+    },
+    {
+      "id": "e2",
+      "clock": "20:20",
+      "kind": "speak",
+      "intent": "自己把话题带到别的日常，比如刚煮了面",
+      "tone": "努力正常"
+    },
+    {
+      "id": "e3",
+      "clock": "20:45",
+      "kind": "speak",
+      "intent": "对方若追问前面那件事，一句话带过并立刻转开；没追问就继续聊日常",
+      "tone": "敷衍但不冷",
+      "constraints": ["不展开原因", "不自责也不抱怨"]
+    },
+    { "id": "e4", "clock": "21:10", "kind": "silence" },
+    {
+      "id": "e5",
+      "clock": "21:35",
+      "kind": "speak",
+      "intent": "又漏一句「那事还没完」，仍然不解释",
+      "tone": "压着",
+      "constraints": ["只给一句，不提供任何细节"]
+    },
+    {
+      "id": "e6",
+      "clock": "22:00",
+      "kind": "speak",
+      "intent": "把话题稳住，聊点轻松的收尾",
+      "tone": "稍微回暖"
+    },
+    { "id": "e7", "clock": "22:20", "kind": "leave" }
+  ]
+}

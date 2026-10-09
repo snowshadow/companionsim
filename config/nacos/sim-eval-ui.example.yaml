@@ -1,0 +1,75 @@
+schemaVersion: 1
+platform:
+  mysql:
+    host: mysql.example.com
+    port: 3306
+    user: sim_eval
+    password: example-mysql-password
+    database: sim_eval
+    connectionLimit: 8
+  superadmin:
+    username: admin
+    passwordHash: ""
+  session:
+    cookieName: sim_session
+    ttlHours: 168
+runtime:
+  suts.json:
+    default: fixture
+    suts:
+      - id: fixture
+        name: 内置样例
+        transport: fixture
+        note: 本地样例，用来先把流程跑通。
+      - id: mock-sse
+        name: 本地 SSE 样例
+        transport: sse
+        url: http://127.0.0.1:5260/api/mock-sut/chat
+        body: openai-chat
+        parse: openai-chat
+      - id: openai
+        name: OpenAI
+        transport: sse
+        api: openai
+        url: https://api.openai.com/v1/chat/completions
+        apiKey: example-openai-key
+        model: gpt-4.1-mini
+        body: openai-chat
+        parse: openai-chat
+      - id: anthropic
+        name: Anthropic
+        transport: sse
+        api: anthropic
+        url: https://api.anthropic.com/v1/messages
+        apiKey: example-anthropic-key
+        model: claude-sonnet-4-5
+        body: openai-chat
+        parse: openai-chat
+  fake-user.json:
+    connectionSutId: anthropic
+    model: claude-sonnet-4-5
+    temperature: 0.9
+    promptVersion: fake-user-v3
+    maxAttempts: 5
+    backoffBaseMs: 1000
+    attemptTimeoutMs: 30000
+    totalTimeoutMs: 120000
+    priorTurnsLimit: 40
+  judge.json:
+    connectionSutId: openai
+    model: gpt-4.1-mini
+    temperature: 0
+    rubricVersion: companion-v1
+  quota.json:
+    dailyTokensPerUser: 3000000
+    dayTimezone: Asia/Shanghai
+    overrides: {}
+    # 系数按三次真实跑局 112 个逐拍样本最小二乘标定（2026-09-22）；
+    # 公式见 server/quota.ts：历史项逐拍累加、评审轮数 = 事件数 + 2×说话数。
+    estimate:
+      simAgentFixed: 600
+      simAgentPerHistoricalTurn: 35
+      simAgentPerBeat: 20
+      judgeFixed: 3500
+      judgePerTurn: 200
+      safetyFactor: 1.3

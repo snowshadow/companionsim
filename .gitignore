@@ -1,0 +1,31 @@
+node_modules
+dist
+.DS_Store
+*.local
+artifacts/runs/*.json
+artifacts/snapshots/*.json
+
+# 平台自身凭据：数据库与超级管理员。模板见 config/platform.example.json
+config/platform.json
+
+# 打包好的 Skill 压缩包，不入库
+docs/skill-packages/*.zip
+
+# 浏览器 dogfood / QA 产物（截图、视频、storage state 里可能带 Cookie），不要入库
+dogfood-output/
+
+# TypeScript 构建缓存
+tsconfig.tsbuildinfo
+
+# 各 agent 宿主安装的技能（第三方工具，不是本项目源码）
+# 本项目的编排 Skill 在 .cursor/skills/，请勿一并忽略
+.agents/
+.claude/
+.grok/
+skills-lock.json
+
+# Local integration secrets and image build outputs
+.local/
+image-base.env
+*.digest
+.npm/

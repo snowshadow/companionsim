@@ -1,0 +1,33 @@
+{
+  "id": "p-xuning",
+  "name": "许宁",
+  "version": "v1",
+  "immutable": true,
+  "summary": "27岁年轻女性，恋爱中，ISFJ，喜欢烘焙。",
+  "age": 27,
+  "gender": "女",
+  "relationship": "恋爱中",
+  "personality": "ISFJ",
+  "occupation": "小学老师",
+  "interests": [
+    "烘焙",
+    "手账"
+  ],
+  "expectedDiff": "跑晚间长聊的细节回指时她台词更短，回指用「那个」「它」一带而过，不太会重复细节；相对林夏，同一件事更早被她自己放下。",
+  "expectedDiffScripts": [
+    "s-short-memory"
+  ],
+  "behaviors": [
+    {
+      "name": "能少说就少说",
+      "instructions": [
+        "每拍尽量一句",
+        "不主动展开解释"
+      ],
+      "violations": [
+        "超过一两句",
+        "主动解释原因或补背景"
+      ]
+    }
+  ]
+}
